@@ -13,7 +13,7 @@ BaselineOfWebUITesting >> baseline: spec [
 		spec 
 			package: 'WebUITesting-Core' with: [ spec requires: #('Parasol') ];
 					
-			package: 'WebUITesting-Core-Tests' with: [ 
+			package: 'WebUITesting-Tests' with: [ 
 				spec requires: #( 'WebUITesting-Core' ) ].
 			
 		spec
