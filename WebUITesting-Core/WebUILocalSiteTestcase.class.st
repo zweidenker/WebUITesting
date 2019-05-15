@@ -47,7 +47,7 @@ WebUILocalSiteTestcase >> setupServer [
 	| delegate |
 	delegate := self webRootPath 
 		ifNotNil: [ :path |
-			(StaticFileDecoratorDelegate 
+			(ZnStaticFileDecoratorDelegate 
 				decorate: self serverDelegate  
 				servingFilesFrom: path) ]
 		ifNil: [ self serverDelegate  ].
