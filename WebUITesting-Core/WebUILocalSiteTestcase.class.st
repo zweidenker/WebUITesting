@@ -60,7 +60,9 @@ WebUILocalSiteTestcase >> setupServer [
 { #category : #running }
 WebUILocalSiteTestcase >> tearDown [
 	super tearDown.
-	server stop.
+	server ifNotNil: [
+		server stop.
+		server := nil ]
 ]
 
 { #category : #initialization }
