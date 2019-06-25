@@ -33,6 +33,12 @@ WebUITestcase >> disableCssTransitions [
 	self webDriver executeScript: script with: #().
 ]
 
+{ #category : #running }
+WebUITestcase >> driver [
+	^ BPRemoteWebDriver withCapabilities: (
+		BPDesiredCapabilities chrome )
+]
+
 { #category : #initialization }
 WebUITestcase >> frontPageClass [
 	^ WebUIView
@@ -51,15 +57,11 @@ WebUITestcase >> openFrontPage [
 
 { #category : #running }
 WebUITestcase >> setUp [
-	| driver |
 	super setUp.
-	driver := (BPRemoteWebDriver withCapabilities: (
-		BPDesiredCapabilities chrome )).
 	context := WebUIContext new
-		driver: driver;
+		driver: self driver;
 		window: self window.
-	context setWindowSize 
-
+	context setWindowSize
 ]
 
 { #category : #running }
